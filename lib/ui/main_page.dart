@@ -302,108 +302,114 @@ class _MainPage extends State<MainPage> {
               ),
             ),
           ),
-          SizedBox(
-            width: returnResponsiveWidth(context, 1),
-            height: returnResponsiveHeight(context, 0.412),
-            child: ListView.builder(
-                itemCount: recentFiles.length,
-                itemBuilder: ((context, index) {
-                  return Column(children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                          top: returnResponsiveHeight(context, 0.03)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: returnResponsiveWidth(context, 0.8),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                IconButton(
-                                  icon: Image.asset('assets/img/pdf.png'),
-                                  iconSize: 80,
-                                  padding: const EdgeInsets.all(0.0),
-                                  constraints: const BoxConstraints(),
-                                  onPressed: () {},
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    TextButton(
-                                      style: TextButton.styleFrom(
-                                        padding: const EdgeInsets.all(0),
-                                        tapTargetSize:
-                                            MaterialTapTargetSize.shrinkWrap,
-                                        minimumSize: const Size(0, 0),
+          Padding(
+            padding:
+                EdgeInsets.only(top: returnResponsiveHeight(context, 0.02)),
+            child: SizedBox(
+              width: returnResponsiveWidth(context, 1),
+              height: returnResponsiveHeight(context, 0.39),
+              child: ListView.builder(
+                  itemCount: recentFiles.length,
+                  itemBuilder: ((context, index) {
+                    return Column(children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                            top: returnResponsiveHeight(context, 0.01)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              width: returnResponsiveWidth(context, 0.8),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  IconButton(
+                                    icon: Image.asset('assets/img/pdf.png'),
+                                    iconSize: 80,
+                                    padding: const EdgeInsets.all(0.0),
+                                    constraints: const BoxConstraints(),
+                                    onPressed: () {},
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      TextButton(
+                                        style: TextButton.styleFrom(
+                                          padding: const EdgeInsets.all(0),
+                                          tapTargetSize:
+                                              MaterialTapTargetSize.shrinkWrap,
+                                          minimumSize: const Size(0, 0),
+                                        ),
+                                        child: Text(
+                                          '${recentFiles[index].title}',
+                                          style: const TextStyle(
+                                              color: Colors.white70,
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w400),
+                                        ),
+                                        onPressed: () {},
                                       ),
-                                      child: Text(
-                                        '${recentFiles[index].title}',
-                                        style: const TextStyle(
-                                            color: Colors.white70,
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w400),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            top: returnResponsiveHeight(
+                                                context, 0.01)),
+                                        child: const Text(
+                                          '27/10/2023 · 10,2 MB',
+                                          style: TextStyle(
+                                              color: Colors.white70,
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w400),
+                                        ),
                                       ),
-                                      onPressed: () {},
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(
-                                          top: returnResponsiveHeight(
-                                              context, 0.01)),
-                                      child: const Text(
-                                        '27/10/2023 · 10,2 MB',
-                                        style: TextStyle(
-                                            color: Colors.white70,
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w400),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            top: returnResponsiveHeight(
+                                                context, 0.01)),
+                                        child: const Text(
+                                          'Protección de datos/2023/',
+                                          style: TextStyle(
+                                              color: Colors.white70,
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w400),
+                                        ),
                                       ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(
-                                          top: returnResponsiveHeight(
-                                              context, 0.01)),
-                                      child: const Text(
-                                        'Protección de datos/2023/',
-                                        style: TextStyle(
-                                            color: Colors.white70,
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w400),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                IconButton(
-                                  icon: const Icon(Icons.more_vert,
-                                      color: Colors.white, size: 30.0),
-                                  padding: const EdgeInsets.all(0.0),
-                                  constraints: const BoxConstraints(),
-                                  onPressed: () {},
-                                ),
-                              ],
+                                    ],
+                                  ),
+                                  IconButton(
+                                    icon: const Icon(Icons.more_vert,
+                                        color: Colors.white, size: 30.0),
+                                    padding: const EdgeInsets.all(0.0),
+                                    constraints: const BoxConstraints(),
+                                    onPressed: () {},
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          top: returnResponsiveHeight(context, 0.02)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: returnResponsiveWidth(context, 0.7),
-                            child: const Divider(
-                              color: Colors.white60,
-                              thickness: 0.5,
+                      Padding(
+                        padding: EdgeInsets.only(
+                            top: returnResponsiveHeight(context, 0.02)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              width: returnResponsiveWidth(context, 0.7),
+                              child: const Divider(
+                                color: Colors.white60,
+                                thickness: 0.5,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ]);
-                })),
+                    ]);
+                  })),
+            ),
           )
         ]),
       ]),
