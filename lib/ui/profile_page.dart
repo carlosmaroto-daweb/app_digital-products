@@ -37,7 +37,223 @@ class _ProfilePageState extends State<ProfilePage> {
           },
         ),
       ),
-      body: Stack(children: []),
+      body: Stack(children: [
+        Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/logos/a14-profile.png',
+                ),
+              ],
+            ),
+            Padding(
+              padding:
+                  EdgeInsets.only(top: returnResponsiveHeight(context, 0.03)),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Área 14 Viajes y Sistemas SL',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding:
+                  EdgeInsets.only(top: returnResponsiveHeight(context, 0.015)),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'atencioncliente@a14.es',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding:
+                  EdgeInsets.only(top: returnResponsiveHeight(context, 0.05)),
+              child: SizedBox(
+                width: returnResponsiveWidth(context, 0.9),
+                child: Table(
+                    defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                    columnWidths: const {
+                      0: FractionColumnWidth(0.2),
+                      1: FractionColumnWidth(0.35),
+                      2: FractionColumnWidth(0.1),
+                      3: FractionColumnWidth(0.35),
+                    },
+                    children: const [
+                      TableRow(
+                        children: [
+                          SizedBox(
+                            height: 75,
+                            child: Icon(
+                              Icons.wallet,
+                              size: 40.0,
+                              color: Color.fromRGBO(63, 62, 62, 1),
+                            ),
+                          ),
+                          Text(
+                            'CIF Number',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Text(
+                            '-',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Text(
+                            '12345678A',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      ),
+                      TableRow(
+                        children: [
+                          SizedBox(
+                            height: 75,
+                            child: Icon(
+                              Icons.phone_iphone,
+                              size: 40.0,
+                              color: Color.fromRGBO(63, 62, 62, 1),
+                            ),
+                          ),
+                          Text(
+                            'Mobile Number',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Text(
+                            '-',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Text(
+                            '123456789',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      ),
+                      TableRow(
+                        children: [
+                          SizedBox(
+                            height: 75,
+                            child: Icon(
+                              Icons.public,
+                              size: 40.0,
+                              color: Color.fromRGBO(63, 62, 62, 1),
+                            ),
+                          ),
+                          Text(
+                            'Country',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Text(
+                            '-',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Text(
+                            'Spain',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      ),
+                      TableRow(
+                        children: [
+                          SizedBox(
+                            height: 75,
+                            child: Icon(
+                              Icons.fmd_good,
+                              size: 40.0,
+                              color: Color.fromRGBO(63, 62, 62, 1),
+                            ),
+                          ),
+                          Text(
+                            'Address',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Text(
+                            '-',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Text(
+                            'C/Mendez nuñez 7, Granada',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      )
+                    ]),
+              ),
+            ),
+            Padding(
+              padding:
+                  EdgeInsets.only(top: returnResponsiveHeight(context, 0.03)),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromRGBO(11, 77, 69, 1),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  padding: const EdgeInsets.fromLTRB(50, 10, 50, 10),
+                  elevation: 0,
+                ),
+                onPressed: () {},
+                child: const Text(
+                  'Editar',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w400),
+                ),
+              ),
+            ),
+          ],
+        )
+      ]),
       bottomNavigationBar: const Nav(3),
     );
   }
