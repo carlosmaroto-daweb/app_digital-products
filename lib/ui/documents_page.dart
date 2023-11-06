@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:appclients/ui/main_page.dart';
 import 'package:appclients/common/nav.dart';
 import 'package:appclients/common/file.dart';
+import 'package:appclients/ui/folder_page.dart';
 
 class DocumentsPage extends StatefulWidget {
   const DocumentsPage({super.key});
@@ -56,24 +57,6 @@ class _DocumentsPageState extends State<DocumentsPage> {
           style: TextStyle(
               color: Colors.white, fontSize: 21, fontWeight: FontWeight.w400),
         ),
-        actions: <Widget>[
-          Padding(
-            padding:
-                EdgeInsets.only(right: returnResponsiveWidth(context, 0.05)),
-            child: SizedBox(
-              height: 50.0,
-              width: 50.0,
-              child: IconButton(
-                padding: const EdgeInsets.all(0.0),
-                icon: const Icon(Icons.account_circle, size: 50.0),
-                tooltip: 'Abrir perfil',
-                onPressed: () {
-                  // handle the press
-                },
-              ),
-            ),
-          ),
-        ],
       ),
       body: ListView(children: [
         Column(
@@ -84,7 +67,10 @@ class _DocumentsPageState extends State<DocumentsPage> {
               child: Row(
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(CupertinoPageRoute(
+                          builder: (_) => const FolderPage()));
+                    },
                     child: SizedBox(
                       width: returnResponsiveWidth(context, 0.33),
                       height: returnResponsiveHeight(context, 0.175),
@@ -104,7 +90,10 @@ class _DocumentsPageState extends State<DocumentsPage> {
                     ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(CupertinoPageRoute(
+                          builder: (_) => const FolderPage()));
+                    },
                     child: SizedBox(
                       width: returnResponsiveWidth(context, 0.33),
                       height: returnResponsiveHeight(context, 0.175),
@@ -124,7 +113,10 @@ class _DocumentsPageState extends State<DocumentsPage> {
                     ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(CupertinoPageRoute(
+                          builder: (_) => const FolderPage()));
+                    },
                     child: SizedBox(
                       width: returnResponsiveWidth(context, 0.33),
                       height: returnResponsiveHeight(context, 0.175),
@@ -149,7 +141,10 @@ class _DocumentsPageState extends State<DocumentsPage> {
             Row(
               children: [
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                        CupertinoPageRoute(builder: (_) => const FolderPage()));
+                  },
                   child: SizedBox(
                     width: returnResponsiveWidth(context, 0.33),
                     height: returnResponsiveHeight(context, 0.175),
@@ -169,7 +164,10 @@ class _DocumentsPageState extends State<DocumentsPage> {
                   ),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                        CupertinoPageRoute(builder: (_) => const FolderPage()));
+                  },
                   child: SizedBox(
                     width: returnResponsiveWidth(context, 0.33),
                     height: returnResponsiveHeight(context, 0.175),
@@ -189,7 +187,10 @@ class _DocumentsPageState extends State<DocumentsPage> {
                   ),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                        CupertinoPageRoute(builder: (_) => const FolderPage()));
+                  },
                   child: SizedBox(
                     width: returnResponsiveWidth(context, 0.33),
                     height: returnResponsiveHeight(context, 0.175),
