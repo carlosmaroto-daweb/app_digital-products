@@ -61,7 +61,151 @@ class _DocumentsPageState extends State<DocumentsPage> {
           ),
         ],
       ),
-      body: Stack(children: []),
+      body: Stack(children: [
+        Column(
+          children: [
+            Padding(
+              padding:
+                  EdgeInsets.only(top: returnResponsiveHeight(context, 0.03)),
+              child: Row(
+                children: [
+                  InkWell(
+                    onTap: () {},
+                    child: SizedBox(
+                      width: returnResponsiveWidth(context, 0.33),
+                      height: returnResponsiveHeight(context, 0.175),
+                      child: const Column(
+                        children: [
+                          Icon(Icons.source, color: Colors.white, size: 100),
+                          Text(
+                            'Protección\nde datos',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Raleway',
+                                color: Colors.white,
+                                fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: SizedBox(
+                      width: returnResponsiveWidth(context, 0.33),
+                      height: returnResponsiveHeight(context, 0.175),
+                      child: const Column(
+                        children: [
+                          Icon(Icons.source, color: Colors.white, size: 100),
+                          Text(
+                            'Documentación\nempleados',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Raleway',
+                                color: Colors.white,
+                                fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: SizedBox(
+                      width: returnResponsiveWidth(context, 0.33),
+                      height: returnResponsiveHeight(context, 0.175),
+                      child: const Column(
+                        children: [
+                          Icon(Icons.source, color: Colors.white, size: 100),
+                          Text(
+                            'Documentación\nproveedores',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Raleway',
+                                color: Colors.white,
+                                fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(
+              children: [
+                InkWell(
+                  onTap: () {},
+                  child: SizedBox(
+                    width: returnResponsiveWidth(context, 0.33),
+                    height: returnResponsiveHeight(context, 0.175),
+                    child: const Column(
+                      children: [
+                        Icon(Icons.source, color: Colors.white, size: 100),
+                        Text(
+                          'Facturas',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontFamily: 'Raleway',
+                              color: Colors.white,
+                              fontSize: 16),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: SizedBox(
+                    width: returnResponsiveWidth(context, 0.33),
+                    height: returnResponsiveHeight(context, 0.175),
+                    child: const Column(
+                      children: [
+                        Icon(Icons.source, color: Colors.white, size: 100),
+                        Text(
+                          'Asesoría',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontFamily: 'Raleway',
+                              color: Colors.white,
+                              fontSize: 16),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: SizedBox(
+                    width: returnResponsiveWidth(context, 0.33),
+                    height: returnResponsiveHeight(context, 0.175),
+                    child: const Column(
+                      children: [
+                        Icon(Icons.source, color: Colors.white, size: 100),
+                        Text(
+                          'Otros',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontFamily: 'Raleway',
+                              color: Colors.white,
+                              fontSize: 16),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              width: returnResponsiveWidth(context, 0.8),
+              child: const Divider(
+                color: Colors.white60,
+                thickness: 0.5,
+              ),
+            ),
+          ],
+        )
+      ]),
       bottomNavigationBar: const Nav(0),
     );
   }
