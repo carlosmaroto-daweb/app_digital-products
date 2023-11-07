@@ -12,7 +12,12 @@ class NewsPage extends StatefulWidget {
 }
 
 class _NewsPageState extends State<NewsPage> {
+  List<List<News>> globalListNews = [];
   List<News> popularNews = [];
+  List<News> normNews = [];
+  List<News> lawNews = [];
+  List<News> otherNews = [];
+  int _selectedIndex = 0;
 
   double returnResponsiveWidth(context, double originalPercentValue) {
     return MediaQuery.of(context).size.width * originalPercentValue;
@@ -25,16 +30,43 @@ class _NewsPageState extends State<NewsPage> {
   @override
   void initState() {
     super.initState();
-    popularNews.add(News(0, "Nombre completo de la noticia 1"));
-    popularNews.add(News(1, "Nombre completo de la noticia 2"));
-    popularNews.add(News(2, "Nombre completo de la noticia 3"));
-    popularNews.add(News(3, "Nombre completo de la noticia 4"));
-    popularNews.add(News(4, "Nombre completo de la noticia 5"));
-    popularNews.add(News(5, "Nombre completo de la noticia 6"));
+    popularNews.add(News(0, "Nombre completo de la noticia popular 1"));
+    popularNews.add(News(1, "Nombre completo de la noticia popular 2"));
+    popularNews.add(News(2, "Nombre completo de la noticia popular 3"));
+    popularNews.add(News(3, "Nombre completo de la noticia popular 4"));
+    popularNews.add(News(4, "Nombre completo de la noticia popular 5"));
+    popularNews.add(News(5, "Nombre completo de la noticia popular 6"));
+
+    normNews.add(News(0, "Nombre completo de la noticia de normativa 1"));
+    normNews.add(News(1, "Nombre completo de la noticia de normativa 2"));
+    normNews.add(News(2, "Nombre completo de la noticia de normativa 3"));
+    normNews.add(News(3, "Nombre completo de la noticia de normativa 4"));
+    normNews.add(News(4, "Nombre completo de la noticia de normativa 5"));
+    normNews.add(News(5, "Nombre completo de la noticia de normativa 6"));
+
+    lawNews.add(News(0, "Nombre completo de la noticia de leyes 1"));
+    lawNews.add(News(1, "Nombre completo de la noticia de leyes 2"));
+    lawNews.add(News(2, "Nombre completo de la noticia de leyes 3"));
+    lawNews.add(News(3, "Nombre completo de la noticia de leyes 4"));
+    lawNews.add(News(4, "Nombre completo de la noticia de leyes 5"));
+    lawNews.add(News(5, "Nombre completo de la noticia de leyes 6"));
+
+    otherNews.add(News(0, "Nombre completo de otras noticias 1"));
+    otherNews.add(News(1, "Nombre completo de otras noticias 2"));
+    otherNews.add(News(2, "Nombre completo de otras noticias 3"));
+    otherNews.add(News(3, "Nombre completo de otras noticias 4"));
+    otherNews.add(News(4, "Nombre completo de otras noticias 5"));
+    otherNews.add(News(5, "Nombre completo de otras noticias 6"));
+
+    globalListNews.add(popularNews);
+    globalListNews.add(normNews);
+    globalListNews.add(lawNews);
+    globalListNews.add(otherNews);
   }
 
   @override
   Widget build(BuildContext context) {
+    List<News> listNews = getListNews();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color.fromRGBO(26, 26, 26, 1),
@@ -71,63 +103,79 @@ class _NewsPageState extends State<NewsPage> {
               ),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
+                    backgroundColor: getBackgroundColor(0),
                     shadowColor: Colors.transparent,
                     padding: const EdgeInsets.all(0),
                     shape: BeveledRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                     minimumSize: const Size(85, 0),
                   ),
-                  onPressed: () {},
-                  child: const Padding(
-                    padding: EdgeInsets.all(8),
+                  onPressed: () {
+                    setState(() {
+                      _selectedIndex = 0;
+                    });
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
                     child: Text('Popular',
-                        style: TextStyle(color: Colors.black, fontSize: 13)),
+                        style: TextStyle(color: getFontColor(0), fontSize: 13)),
                   )),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
+                    backgroundColor: getBackgroundColor(1),
                     shadowColor: Colors.transparent,
                     padding: const EdgeInsets.all(0),
                     shape: BeveledRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                     minimumSize: const Size(85, 0),
                   ),
-                  onPressed: () {},
-                  child: const Padding(
-                    padding: EdgeInsets.all(8),
+                  onPressed: () {
+                    setState(() {
+                      _selectedIndex = 1;
+                    });
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
                     child: Text('Normativa',
-                        style: TextStyle(color: Colors.black, fontSize: 13)),
+                        style: TextStyle(color: getFontColor(1), fontSize: 13)),
                   )),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
+                    backgroundColor: getBackgroundColor(2),
                     shadowColor: Colors.transparent,
                     padding: const EdgeInsets.all(0),
                     shape: BeveledRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                     minimumSize: const Size(85, 0),
                   ),
-                  onPressed: () {},
-                  child: const Padding(
-                    padding: EdgeInsets.all(8),
+                  onPressed: () {
+                    setState(() {
+                      _selectedIndex = 2;
+                    });
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
                     child: Text('Leyes',
-                        style: TextStyle(color: Colors.black, fontSize: 13)),
+                        style: TextStyle(color: getFontColor(2), fontSize: 13)),
                   )),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
+                    backgroundColor: getBackgroundColor(3),
                     shadowColor: Colors.transparent,
                     padding: const EdgeInsets.all(0),
                     shape: BeveledRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                     minimumSize: const Size(85, 0),
                   ),
-                  onPressed: () {},
-                  child: const Padding(
-                    padding: EdgeInsets.all(8),
+                  onPressed: () {
+                    setState(() {
+                      _selectedIndex = 3;
+                    });
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
                     child: Text('Otros',
-                        style: TextStyle(color: Colors.black, fontSize: 13)),
+                        style: TextStyle(color: getFontColor(3), fontSize: 13)),
                   )),
             ]),
             Padding(
@@ -137,7 +185,7 @@ class _NewsPageState extends State<NewsPage> {
                 width: returnResponsiveWidth(context, 0.95),
                 height: returnResponsiveHeight(context, 0.68),
                 child: ListView.builder(
-                    itemCount: popularNews.length,
+                    itemCount: listNews.length,
                     itemBuilder: ((context, index) {
                       return Padding(
                         padding: EdgeInsets.only(
@@ -172,7 +220,7 @@ class _NewsPageState extends State<NewsPage> {
                                         child: Column(
                                           children: [
                                             Text(
-                                              '${popularNews[index].title}',
+                                              '${listNews[index].title}',
                                               textAlign: TextAlign.center,
                                               style: const TextStyle(
                                                   color: Colors.white,
@@ -254,5 +302,25 @@ class _NewsPageState extends State<NewsPage> {
       ]),
       bottomNavigationBar: const Nav(1),
     );
+  }
+
+  Color getBackgroundColor(index) {
+    if (_selectedIndex == index) {
+      return const Color.fromRGBO(11, 77, 69, 1);
+    } else {
+      return Colors.white;
+    }
+  }
+
+  Color getFontColor(index) {
+    if (_selectedIndex == index) {
+      return Colors.white;
+    } else {
+      return Colors.black;
+    }
+  }
+
+  List<News> getListNews() {
+    return globalListNews[_selectedIndex];
   }
 }
