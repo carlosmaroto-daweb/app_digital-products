@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:appclients/common/nav.dart';
@@ -49,6 +50,42 @@ class _NewDocumentPageState extends State<NewDocumentPage> {
             Padding(
               padding:
                   EdgeInsets.only(top: returnResponsiveHeight(context, 0.015)),
+              child: Center(
+                child: InkWell(
+                  onTap: () {},
+                  child: DottedBorder(
+                    color: Colors.white,
+                    strokeWidth: 0.5,
+                    dashPattern: const [10, 6],
+                    child: Container(
+                      width: returnResponsiveWidth(context, 0.8),
+                      height: returnResponsiveHeight(context, 0.25),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: returnResponsiveHeight(context, 0.02)),
+                        child: Column(children: [
+                          const Icon(Icons.note_add,
+                              color: Colors.white, size: 75.0),
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: returnResponsiveHeight(context, 0.02)),
+                            child: const Text('Subir nuevo documento',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16)),
+                          )
+                        ]),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding:
+                  EdgeInsets.only(top: returnResponsiveHeight(context, 0.05)),
               child: Center(
                 child: Container(
                   width: returnResponsiveWidth(context, 0.8),
@@ -142,7 +179,7 @@ class _NewDocumentPageState extends State<NewDocumentPage> {
             ),
             Padding(
               padding:
-                  EdgeInsets.only(top: returnResponsiveHeight(context, 0.1)),
+                  EdgeInsets.only(top: returnResponsiveHeight(context, 0.05)),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromRGBO(11, 77, 69, 1),
