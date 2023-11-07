@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:appclients/ui/main_page.dart';
 import 'package:appclients/common/nav.dart';
+import 'package:appclients/ui/privacy_page.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -228,7 +229,10 @@ class _SettingsPageState extends State<SettingsPage> {
                         )),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(CupertinoPageRoute(
+                          builder: (_) => const PrivacyPage()));
+                    },
                     child: Container(
                         width: returnResponsiveWidth(context, 0.45),
                         decoration: const BoxDecoration(
