@@ -1,3 +1,5 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:appclients/common/nav.dart';
@@ -13,6 +15,8 @@ class FolderPage extends StatefulWidget {
 
 class _FolderPageState extends State<FolderPage> {
   List<File> pdfFiles = [];
+  List<Widget> pdfGridView = [];
+  int _selectedIndex = 0;
 
   double returnResponsiveWidth(context, double originalPercentValue) {
     return MediaQuery.of(context).size.width * originalPercentValue;
@@ -31,10 +35,129 @@ class _FolderPageState extends State<FolderPage> {
     pdfFiles.add(File(3, "Nombre4.pdf"));
     pdfFiles.add(File(4, "Nombre5.pdf"));
     pdfFiles.add(File(5, "Nombre6.pdf"));
+    pdfFiles.add(File(6, "Nombre7.pdf"));
+    pdfFiles.add(File(7, "Nombre8.pdf"));
+    pdfFiles.add(File(8, "Nombre9.pdf"));
+    pdfFiles.add(File(9, "Nombre10.pdf"));
+    pdfFiles.add(File(10, "Nombre11.pdf"));
+    pdfFiles.add(File(11, "Nombre12.pdf"));
+    pdfFiles.add(File(12, "Nombre13.pdf"));
+    pdfFiles.add(File(13, "Nombre14.pdf"));
+    pdfFiles.add(File(14, "Nombre15.pdf"));
+    pdfFiles.add(File(15, "Nombre16.pdf"));
+    pdfFiles.add(File(16, "Nombre17.pdf"));
+    pdfFiles.add(File(17, "Nombre18.pdf"));
+    pdfFiles.add(File(18, "Nombre19.pdf"));
+    pdfFiles.add(File(19, "Nombre20.pdf"));
+
+    for (var pdfFile in pdfFiles) {
+      pdfGridView.add(InkWell(
+        onTap: () {},
+        child: Column(
+          children: [
+            const Icon(Icons.insert_drive_file_outlined,
+                color: Colors.white, size: 100),
+            Text(
+              '${pdfFile.title}',
+              style: const TextStyle(
+                  color: Colors.white70,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600),
+            ),
+            const Text(
+              '27/10/2023\n10,2 MB',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: Colors.white70,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w400),
+            ),
+          ],
+        ),
+      ));
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> _views = <Widget>[
+      Stack(children: [
+        GridView(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3, childAspectRatio: 4 / 5),
+          children: pdfGridView,
+        )
+      ]),
+      Stack(children: [
+        ListView.builder(
+            itemCount: pdfFiles.length,
+            itemBuilder: ((context, index) {
+              return Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                        top: returnResponsiveHeight(context, 0.025)),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset('assets/img/pdf.png', scale: 1.5),
+                          Padding(
+                            padding: EdgeInsets.only(
+                                left: returnResponsiveWidth(context, 0.05)),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: returnResponsiveHeight(
+                                          context, 0.005)),
+                                  child: Text(
+                                    '${pdfFiles[index].title}',
+                                    style: const TextStyle(
+                                        color: Colors.white70,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: returnResponsiveHeight(
+                                          context, 0.01)),
+                                  child: const Text(
+                                    '27/10/2023 · 10,2 MB',
+                                    style: TextStyle(
+                                        color: Colors.white70,
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: returnResponsiveHeight(
+                                          context, 0.005)),
+                                  child: SizedBox(
+                                    width: returnResponsiveWidth(context, 0.5),
+                                    child: const Divider(
+                                      color: Colors.white60,
+                                      thickness: 0.5,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              );
+            }))
+      ]),
+    ];
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color.fromRGBO(26, 26, 26, 1),
@@ -65,540 +188,29 @@ class _FolderPageState extends State<FolderPage> {
               width: 50.0,
               child: IconButton(
                 padding: const EdgeInsets.all(0.0),
-                icon: const Icon(Icons.list_outlined, size: 30.0),
+                icon: getIcon(),
                 tooltip: 'Abrir perfil',
                 onPressed: () {
-                  // handle the press
+                  setState(() {
+                    _selectedIndex++;
+                    _selectedIndex = _selectedIndex % 2;
+                  });
                 },
               ),
             ),
           ),
         ],
       ),
-      body: Stack(children: [
-        SizedBox(
-            width: returnResponsiveWidth(context, 0.95),
-            height: returnResponsiveHeight(context, 0.95),
-            child: ListView(children: [
-              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ]),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ]),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ]),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ]),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ]),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: returnResponsiveWidth(context, 0.05)),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Column(
-                      children: [
-                        Icon(Icons.insert_drive_file_outlined,
-                            color: Colors.white, size: 100),
-                        Text(
-                          'Nombre',
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          '27/10/2023\n10,2 MB',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ]),
-            ])),
-      ]),
+      body: _views.elementAt(_selectedIndex),
       bottomNavigationBar: const Nav(0),
     );
+  }
+
+  Icon getIcon() {
+    if (_selectedIndex == 0) {
+      return const Icon(Icons.list_outlined, size: 30.0);
+    } else {
+      return const Icon(Icons.grid_view, size: 30.0);
+    }
   }
 }
