@@ -53,6 +53,7 @@ class _FolderPageState extends State<FolderPage> {
     for (var pdfFile in pdfFiles) {
       pdfGridView.add(InkWell(
         onTap: () {},
+        onLongPress: () {},
         child: Column(
           children: [
             const Icon(Icons.insert_drive_file_outlined,
@@ -99,6 +100,7 @@ class _FolderPageState extends State<FolderPage> {
                         top: returnResponsiveHeight(context, 0.025)),
                     child: InkWell(
                       onTap: () {},
+                      onLongPress: () {},
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,

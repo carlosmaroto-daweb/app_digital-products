@@ -245,6 +245,7 @@ class _DocumentsPageState extends State<DocumentsPage> {
                             padding: const EdgeInsets.all(8.0),
                             child: InkWell(
                               onTap: () {},
+                              onLongPress: () {},
                               child: Column(
                                 children: [
                                   const Icon(Icons.insert_drive_file_outlined,
@@ -309,6 +310,7 @@ class _DocumentsPageState extends State<DocumentsPage> {
                             padding: const EdgeInsets.all(8.0),
                             child: InkWell(
                               onTap: () {},
+                              onLongPress: () {},
                               child: Column(
                                 children: [
                                   const Icon(Icons.insert_drive_file_outlined,
