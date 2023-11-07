@@ -83,10 +83,13 @@ class _FolderPageState extends State<FolderPage> {
   Widget build(BuildContext context) {
     final List<Widget> _views = <Widget>[
       Stack(children: [
-        GridView(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3, childAspectRatio: 4 / 5),
-          children: pdfGridView,
+        Padding(
+          padding: EdgeInsets.only(top: returnResponsiveHeight(context, 0.02)),
+          child: GridView(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3, childAspectRatio: 4 / 5),
+            children: pdfGridView,
+          ),
         )
       ]),
       Stack(children: [
