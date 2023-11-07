@@ -18,6 +18,7 @@ class _NewsPageState extends State<NewsPage> {
   List<News> lawNews = [];
   List<News> otherNews = [];
   int _selectedIndex = 0;
+  bool _enableSearch = false;
 
   double returnResponsiveWidth(context, double originalPercentValue) {
     return MediaQuery.of(context).size.width * originalPercentValue;
@@ -93,90 +94,25 @@ class _NewsPageState extends State<NewsPage> {
         Column(
           children: [
             Row(children: [
-              const Padding(
-                padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
-                child: CircleAvatar(
-                    radius: 15,
-                    backgroundColor: Colors.white,
-                    child: Icon(Icons.search,
-                        color: Color.fromRGBO(45, 43, 43, 1), size: 25)),
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    if (_enableSearch) {
+                      _enableSearch = false;
+                    } else {
+                      _enableSearch = true;
+                    }
+                  });
+                },
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+                  child: CircleAvatar(
+                      radius: 15,
+                      backgroundColor: Colors.white,
+                      child: getIcon()),
+                ),
               ),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: getBackgroundColor(0),
-                    shadowColor: Colors.transparent,
-                    padding: const EdgeInsets.all(0),
-                    shape: BeveledRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    minimumSize: const Size(85, 0),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _selectedIndex = 0;
-                    });
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: Text('Popular',
-                        style: TextStyle(color: getFontColor(0), fontSize: 13)),
-                  )),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: getBackgroundColor(1),
-                    shadowColor: Colors.transparent,
-                    padding: const EdgeInsets.all(0),
-                    shape: BeveledRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    minimumSize: const Size(85, 0),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _selectedIndex = 1;
-                    });
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: Text('Normativa',
-                        style: TextStyle(color: getFontColor(1), fontSize: 13)),
-                  )),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: getBackgroundColor(2),
-                    shadowColor: Colors.transparent,
-                    padding: const EdgeInsets.all(0),
-                    shape: BeveledRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    minimumSize: const Size(85, 0),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _selectedIndex = 2;
-                    });
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: Text('Leyes',
-                        style: TextStyle(color: getFontColor(2), fontSize: 13)),
-                  )),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: getBackgroundColor(3),
-                    shadowColor: Colors.transparent,
-                    padding: const EdgeInsets.all(0),
-                    shape: BeveledRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    minimumSize: const Size(85, 0),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _selectedIndex = 3;
-                    });
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: Text('Otros',
-                        style: TextStyle(color: getFontColor(3), fontSize: 13)),
-                  )),
+              getTypeList(),
             ]),
             Padding(
               padding:
@@ -302,6 +238,130 @@ class _NewsPageState extends State<NewsPage> {
       ]),
       bottomNavigationBar: const Nav(1),
     );
+  }
+
+  Widget getIcon() {
+    if (_enableSearch) {
+      return const Icon(Icons.chevron_left,
+          color: Color.fromRGBO(45, 43, 43, 1), size: 25);
+    } else {
+      return const Icon(Icons.search,
+          color: Color.fromRGBO(45, 43, 43, 1), size: 25);
+    }
+  }
+
+  Widget getTypeList() {
+    if (_enableSearch) {
+      return Container(
+        width: returnResponsiveWidth(context, 0.8),
+        height: returnResponsiveHeight(context, 0.045),
+        decoration: BoxDecoration(
+          color: const Color.fromRGBO(63, 62, 62, 1),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: TextFormField(
+          style: const TextStyle(
+              fontWeight: FontWeight.w400, fontSize: 19, color: Colors.white70),
+          decoration: InputDecoration(
+            icon: IconButton(
+              padding:
+                  EdgeInsets.only(left: returnResponsiveWidth(context, 0.03)),
+              icon: const Icon(Icons.search, color: Colors.white, size: 36.0),
+              tooltip: 'Abrir perfil',
+              onPressed: () {
+                // handle the press
+              },
+            ),
+            hintText: 'Buscar por nombre',
+            hintStyle: const TextStyle(
+                fontWeight: FontWeight.w400,
+                fontSize: 19,
+                color: Colors.white70),
+          ),
+        ),
+      );
+    } else {
+      return Row(
+        children: [
+          ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: getBackgroundColor(0),
+                shadowColor: Colors.transparent,
+                padding: const EdgeInsets.all(0),
+                shape: BeveledRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                minimumSize: const Size(85, 0),
+              ),
+              onPressed: () {
+                setState(() {
+                  _selectedIndex = 0;
+                });
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Text('Popular',
+                    style: TextStyle(color: getFontColor(0), fontSize: 13)),
+              )),
+          ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: getBackgroundColor(1),
+                shadowColor: Colors.transparent,
+                padding: const EdgeInsets.all(0),
+                shape: BeveledRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                minimumSize: const Size(85, 0),
+              ),
+              onPressed: () {
+                setState(() {
+                  _selectedIndex = 1;
+                });
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Text('Normativa',
+                    style: TextStyle(color: getFontColor(1), fontSize: 13)),
+              )),
+          ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: getBackgroundColor(2),
+                shadowColor: Colors.transparent,
+                padding: const EdgeInsets.all(0),
+                shape: BeveledRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                minimumSize: const Size(85, 0),
+              ),
+              onPressed: () {
+                setState(() {
+                  _selectedIndex = 2;
+                });
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Text('Leyes',
+                    style: TextStyle(color: getFontColor(2), fontSize: 13)),
+              )),
+          ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: getBackgroundColor(3),
+                shadowColor: Colors.transparent,
+                padding: const EdgeInsets.all(0),
+                shape: BeveledRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                minimumSize: const Size(85, 0),
+              ),
+              onPressed: () {
+                setState(() {
+                  _selectedIndex = 3;
+                });
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Text('Otros',
+                    style: TextStyle(color: getFontColor(3), fontSize: 13)),
+              )),
+        ],
+      );
+    }
   }
 
   Color getBackgroundColor(index) {
