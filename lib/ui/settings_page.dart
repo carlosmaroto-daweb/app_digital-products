@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:appclients/ui/main_page.dart';
 import 'package:appclients/common/nav.dart';
+import 'package:appclients/ui/new_document_page.dart';
 import 'package:appclients/ui/privacy_page.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -54,7 +55,10 @@ class _SettingsPageState extends State<SettingsPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(CupertinoPageRoute(
+                          builder: (_) => const NewDocumentPage()));
+                    },
                     child: Container(
                         width: returnResponsiveWidth(context, 0.45),
                         decoration: const BoxDecoration(

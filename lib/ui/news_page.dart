@@ -263,6 +263,7 @@ class _NewsPageState extends State<NewsPage> {
           style: const TextStyle(
               fontWeight: FontWeight.w400, fontSize: 19, color: Colors.white70),
           decoration: InputDecoration(
+            border: InputBorder.none,
             icon: IconButton(
               padding:
                   EdgeInsets.only(left: returnResponsiveWidth(context, 0.03)),

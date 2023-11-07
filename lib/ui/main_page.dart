@@ -88,6 +88,7 @@ class _MainPage extends State<MainPage> {
                         fontSize: 19,
                         color: Colors.white70),
                     decoration: InputDecoration(
+                      border: InputBorder.none,
                       icon: IconButton(
                         padding: EdgeInsets.only(
                             left: returnResponsiveWidth(context, 0.03)),
