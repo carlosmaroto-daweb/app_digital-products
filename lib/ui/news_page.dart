@@ -116,7 +116,7 @@ class _NewsPageState extends State<NewsPage> {
             ]),
             Padding(
               padding:
-                  EdgeInsets.only(top: returnResponsiveHeight(context, 0.04)),
+                  EdgeInsets.only(top: returnResponsiveHeight(context, 0.033)),
               child: SizedBox(
                 width: returnResponsiveWidth(context, 0.95),
                 height: returnResponsiveHeight(context, 0.68),
@@ -254,7 +254,7 @@ class _NewsPageState extends State<NewsPage> {
     if (_enableSearch) {
       return Container(
         width: returnResponsiveWidth(context, 0.8),
-        height: returnResponsiveHeight(context, 0.045),
+        height: 40,
         decoration: BoxDecoration(
           color: const Color.fromRGBO(63, 62, 62, 1),
           borderRadius: BorderRadius.circular(8),
