@@ -174,9 +174,7 @@ class LoginPage extends StatelessWidget {
                                 color: Color.fromARGB(255, 255, 0, 0)),
                           ),
                         ])),
-                    onPressed: () {
-                      print("entra");
-                    },
+                    onPressed: () {},
                   ),
                 ),
               ],
