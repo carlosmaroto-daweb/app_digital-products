@@ -93,32 +93,32 @@ class _ProfilePageState extends State<ProfilePage> {
                       2: FractionColumnWidth(0.1),
                       3: FractionColumnWidth(0.35),
                     },
-                    children: const [
+                    children: [
                       TableRow(
                         children: [
                           SizedBox(
-                            height: 75,
-                            child: Icon(
+                            height: returnResponsiveHeight(context, 0.075),
+                            child: const Icon(
                               Icons.wallet,
                               size: 40.0,
                               color: Color.fromRGBO(63, 62, 62, 1),
                             ),
                           ),
-                          Text(
+                          const Text(
                             'CIF Number',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400),
                           ),
-                          Text(
+                          const Text(
                             '-',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w400),
                           ),
-                          Text(
+                          const Text(
                             '12345678A',
                             style: TextStyle(
                                 color: Colors.white,
@@ -130,28 +130,28 @@ class _ProfilePageState extends State<ProfilePage> {
                       TableRow(
                         children: [
                           SizedBox(
-                            height: 75,
-                            child: Icon(
+                            height: returnResponsiveHeight(context, 0.075),
+                            child: const Icon(
                               Icons.phone_iphone,
                               size: 40.0,
                               color: Color.fromRGBO(63, 62, 62, 1),
                             ),
                           ),
-                          Text(
+                          const Text(
                             'Mobile Number',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400),
                           ),
-                          Text(
+                          const Text(
                             '-',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w400),
                           ),
-                          Text(
+                          const Text(
                             '123456789',
                             style: TextStyle(
                                 color: Colors.white,
@@ -163,28 +163,28 @@ class _ProfilePageState extends State<ProfilePage> {
                       TableRow(
                         children: [
                           SizedBox(
-                            height: 75,
-                            child: Icon(
+                            height: returnResponsiveHeight(context, 0.075),
+                            child: const Icon(
                               Icons.public,
                               size: 40.0,
                               color: Color.fromRGBO(63, 62, 62, 1),
                             ),
                           ),
-                          Text(
+                          const Text(
                             'Country',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400),
                           ),
-                          Text(
+                          const Text(
                             '-',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w400),
                           ),
-                          Text(
+                          const Text(
                             'Spain',
                             style: TextStyle(
                                 color: Colors.white,
@@ -196,28 +196,28 @@ class _ProfilePageState extends State<ProfilePage> {
                       TableRow(
                         children: [
                           SizedBox(
-                            height: 75,
-                            child: Icon(
+                            height: returnResponsiveHeight(context, 0.075),
+                            child: const Icon(
                               Icons.fmd_good,
                               size: 40.0,
                               color: Color.fromRGBO(63, 62, 62, 1),
                             ),
                           ),
-                          Text(
+                          const Text(
                             'Address',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400),
                           ),
-                          Text(
+                          const Text(
                             '-',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w400),
                           ),
-                          Text(
+                          const Text(
                             'C/Mendez nuñez 7, Granada',
                             style: TextStyle(
                                 color: Colors.white,
