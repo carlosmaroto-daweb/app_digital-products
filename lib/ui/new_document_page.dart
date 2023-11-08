@@ -93,7 +93,7 @@ class _NewDocumentPageState extends State<NewDocumentPage> {
               child: Center(
                 child: Container(
                   width: returnResponsiveWidth(context, 0.8),
-                  height: returnResponsiveHeight(context, 0.045),
+                  height: 40,
                   decoration: BoxDecoration(
                     color: const Color.fromRGBO(63, 62, 62, 1),
                     borderRadius: BorderRadius.circular(8),
@@ -124,7 +124,7 @@ class _NewDocumentPageState extends State<NewDocumentPage> {
               child: Center(
                 child: Container(
                   width: returnResponsiveWidth(context, 0.8),
-                  height: returnResponsiveHeight(context, 0.045),
+                  height: 40,
                   decoration: BoxDecoration(
                     color: const Color.fromRGBO(63, 62, 62, 1),
                     borderRadius: BorderRadius.circular(8),
