@@ -48,7 +48,7 @@ class _SignaturePageState extends State<SignaturePage> {
     _signatureCanvas = Signature(
       controller: _controller,
       width: returnResponsiveWidth(context, 0.8),
-      height: returnResponsiveHeight(context, 0.25),
+      height: returnResponsiveHeight(context, 0.2),
       backgroundColor: const Color.fromRGBO(63, 62, 62, 1),
     );
     return Scaffold(
@@ -94,7 +94,7 @@ class _SignaturePageState extends State<SignaturePage> {
             ),
             SizedBox(
               width: returnResponsiveWidth(context, 0.95),
-              height: returnResponsiveHeight(context, 0.2),
+              height: 175,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: pdfFiles.length,
@@ -183,7 +183,7 @@ class _SignaturePageState extends State<SignaturePage> {
                           dashPattern: const [10, 6],
                           child: Container(
                             width: returnResponsiveWidth(context, 0.8),
-                            height: returnResponsiveHeight(context, 0.25),
+                            height: returnResponsiveHeight(context, 0.2),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
                             ),
