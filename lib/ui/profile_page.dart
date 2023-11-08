@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:appclients/ui/main_page.dart';
 import 'package:appclients/common/nav.dart';
+import 'package:appclients/ui/notification_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -36,6 +37,24 @@ class _ProfilePageState extends State<ProfilePage> {
                 .push(CupertinoPageRoute(builder: (_) => const MainPage()));
           },
         ),
+        actions: <Widget>[
+          Padding(
+            padding:
+                EdgeInsets.only(right: returnResponsiveWidth(context, 0.05)),
+            child: SizedBox(
+              height: 50.0,
+              width: 50.0,
+              child: IconButton(
+                padding: const EdgeInsets.all(0.0),
+                icon: const Icon(Icons.notifications, size: 30.0),
+                onPressed: () {
+                  Navigator.of(context).push(CupertinoPageRoute(
+                      builder: (_) => const NotificationPage()));
+                },
+              ),
+            ),
+          ),
+        ],
       ),
       body: Stack(children: [
         Column(
