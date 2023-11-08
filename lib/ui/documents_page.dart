@@ -73,7 +73,7 @@ class _DocumentsPageState extends State<DocumentsPage> {
                     },
                     child: SizedBox(
                       width: returnResponsiveWidth(context, 0.33),
-                      height: returnResponsiveHeight(context, 0.175),
+                      height: 150,
                       child: const Column(
                         children: [
                           Icon(Icons.source, color: Colors.white, size: 100),
@@ -96,7 +96,7 @@ class _DocumentsPageState extends State<DocumentsPage> {
                     },
                     child: SizedBox(
                       width: returnResponsiveWidth(context, 0.33),
-                      height: returnResponsiveHeight(context, 0.175),
+                      height: 150,
                       child: const Column(
                         children: [
                           Icon(Icons.source, color: Colors.white, size: 100),
@@ -119,7 +119,7 @@ class _DocumentsPageState extends State<DocumentsPage> {
                     },
                     child: SizedBox(
                       width: returnResponsiveWidth(context, 0.33),
-                      height: returnResponsiveHeight(context, 0.175),
+                      height: 150,
                       child: const Column(
                         children: [
                           Icon(Icons.source, color: Colors.white, size: 100),
@@ -147,7 +147,7 @@ class _DocumentsPageState extends State<DocumentsPage> {
                   },
                   child: SizedBox(
                     width: returnResponsiveWidth(context, 0.33),
-                    height: returnResponsiveHeight(context, 0.175),
+                    height: 150,
                     child: const Column(
                       children: [
                         Icon(Icons.source, color: Colors.white, size: 100),
@@ -170,7 +170,7 @@ class _DocumentsPageState extends State<DocumentsPage> {
                   },
                   child: SizedBox(
                     width: returnResponsiveWidth(context, 0.33),
-                    height: returnResponsiveHeight(context, 0.175),
+                    height: 150,
                     child: const Column(
                       children: [
                         Icon(Icons.source, color: Colors.white, size: 100),
@@ -193,7 +193,7 @@ class _DocumentsPageState extends State<DocumentsPage> {
                   },
                   child: SizedBox(
                     width: returnResponsiveWidth(context, 0.33),
-                    height: returnResponsiveHeight(context, 0.175),
+                    height: 150,
                     child: const Column(
                       children: [
                         Icon(Icons.source, color: Colors.white, size: 100),
@@ -233,7 +233,7 @@ class _DocumentsPageState extends State<DocumentsPage> {
             ),
             SizedBox(
               width: returnResponsiveWidth(context, 0.95),
-              height: returnResponsiveHeight(context, 0.2),
+              height: 175,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: pdfFiles.length,
@@ -298,7 +298,7 @@ class _DocumentsPageState extends State<DocumentsPage> {
             ),
             SizedBox(
               width: returnResponsiveWidth(context, 0.95),
-              height: returnResponsiveHeight(context, 0.2),
+              height: 175,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: pdfFiles.length,
