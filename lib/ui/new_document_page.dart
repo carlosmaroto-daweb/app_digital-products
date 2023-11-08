@@ -1,4 +1,5 @@
 import 'package:dotted_border/dotted_border.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:appclients/common/nav.dart';
@@ -12,6 +13,10 @@ class NewDocumentPage extends StatefulWidget {
 }
 
 class _NewDocumentPageState extends State<NewDocumentPage> {
+  // ignore: prefer_typing_uninitialized_variables
+  var file;
+  bool uploadArchive = false;
+
   double returnResponsiveWidth(context, double originalPercentValue) {
     return MediaQuery.of(context).size.width * originalPercentValue;
   }
@@ -52,7 +57,16 @@ class _NewDocumentPageState extends State<NewDocumentPage> {
                   EdgeInsets.only(top: returnResponsiveHeight(context, 0.015)),
               child: Center(
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () async {
+                    FilePickerResult? result =
+                        await FilePicker.platform.pickFiles();
+                    if (result != null) {
+                      setState(() {
+                        uploadArchive = true;
+                      });
+                      file = result.files.first;
+                    }
+                  },
                   child: DottedBorder(
                     color: Colors.white,
                     strokeWidth: 0.5,
@@ -66,17 +80,7 @@ class _NewDocumentPageState extends State<NewDocumentPage> {
                       child: Padding(
                         padding: EdgeInsets.only(
                             top: returnResponsiveHeight(context, 0.02)),
-                        child: Column(children: [
-                          const Icon(Icons.note_add,
-                              color: Colors.white, size: 75.0),
-                          Padding(
-                            padding: EdgeInsets.only(
-                                top: returnResponsiveHeight(context, 0.02)),
-                            child: const Text('Subir nuevo documento',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 16)),
-                          )
-                        ]),
+                        child: getFile(context),
                       ),
                     ),
                   ),
@@ -204,5 +208,44 @@ class _NewDocumentPageState extends State<NewDocumentPage> {
       ]),
       bottomNavigationBar: const Nav(4),
     );
+  }
+
+  Column getFile(BuildContext context) {
+    if (uploadArchive) {
+      return Column(
+        children: [
+          const Icon(Icons.insert_drive_file_outlined,
+              color: Colors.white, size: 75),
+          Padding(
+            padding:
+                EdgeInsets.only(top: returnResponsiveHeight(context, 0.02)),
+            child: Text(
+              '${file.name}',
+              style: const TextStyle(
+                  color: Colors.white70,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600),
+            ),
+          ),
+          Text(
+            '27/10/2023\n${file.size}',
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+                color: Colors.white70,
+                fontSize: 12,
+                fontWeight: FontWeight.w400),
+          ),
+        ],
+      );
+    } else {
+      return Column(children: [
+        const Icon(Icons.note_add, color: Colors.white, size: 75),
+        Padding(
+          padding: EdgeInsets.only(top: returnResponsiveHeight(context, 0.02)),
+          child: const Text('Subir nuevo documento',
+              style: TextStyle(color: Colors.white, fontSize: 16)),
+        )
+      ]);
+    }
   }
 }
