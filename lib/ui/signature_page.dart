@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:appclients/common/nav.dart';
 import 'package:appclients/ui/settings_page.dart';
 import 'package:appclients/common/file.dart';
+import 'package:signature/signature.dart';
 
 class SignaturePage extends StatefulWidget {
   const SignaturePage({super.key});
@@ -14,6 +15,12 @@ class SignaturePage extends StatefulWidget {
 
 class _SignaturePageState extends State<SignaturePage> {
   List<File> pdfFiles = [];
+  final SignatureController _controller = SignatureController(
+    penStrokeWidth: 2,
+    penColor: Colors.white,
+  );
+  // ignore: prefer_typing_uninitialized_variables
+  var _signatureCanvas;
 
   double returnResponsiveWidth(context, double originalPercentValue) {
     return MediaQuery.of(context).size.width * originalPercentValue;
@@ -36,6 +43,12 @@ class _SignaturePageState extends State<SignaturePage> {
 
   @override
   Widget build(BuildContext context) {
+    _signatureCanvas = Signature(
+      controller: _controller,
+      width: returnResponsiveWidth(context, 0.8),
+      height: returnResponsiveHeight(context, 0.25),
+      backgroundColor: const Color.fromRGBO(63, 62, 62, 1),
+    );
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color.fromRGBO(26, 26, 26, 1),
@@ -154,10 +167,7 @@ class _SignaturePageState extends State<SignaturePage> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8),
                               ),
-                              child: Padding(
-                                padding: EdgeInsets.only(
-                                    top: returnResponsiveHeight(context, 0.02)),
-                              ),
+                              child: _signatureCanvas,
                             ),
                           ),
                         ),
