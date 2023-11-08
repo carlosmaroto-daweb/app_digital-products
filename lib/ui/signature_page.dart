@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:appclients/common/nav.dart';
@@ -135,6 +136,56 @@ class _SignaturePageState extends State<SignaturePage> {
                       child: const Text(
                         'Dibuje la firma en el recuadro',
                         style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: returnResponsiveHeight(context, 0.03)),
+                      child: Center(
+                        child: InkWell(
+                          onTap: () {},
+                          child: DottedBorder(
+                            color: Colors.white,
+                            strokeWidth: 0.5,
+                            dashPattern: const [10, 6],
+                            child: Container(
+                              width: returnResponsiveWidth(context, 0.8),
+                              height: returnResponsiveHeight(context, 0.25),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    top: returnResponsiveHeight(context, 0.02)),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: returnResponsiveHeight(context, 0.05)),
+                      child: Center(
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                const Color.fromRGBO(11, 77, 69, 1),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            padding: const EdgeInsets.fromLTRB(50, 10, 50, 10),
+                            elevation: 0,
+                          ),
+                          onPressed: () {},
+                          child: const Text(
+                            'Firmar documento',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 22,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ),
                       ),
                     ),
                   ],
