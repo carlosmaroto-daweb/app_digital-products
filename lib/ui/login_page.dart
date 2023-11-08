@@ -208,10 +208,9 @@ class LoginPage extends StatelessWidget {
                   handleNavigateTapToControllerPage(context);
                 },
               ),
-              Padding(
-                padding: EdgeInsets.only(
-                    right: returnResponsiveWidth(context, 0.05)),
-                child: const Icon(
+              const Padding(
+                padding: EdgeInsets.only(right: 20),
+                child: Icon(
                   Icons.arrow_forward,
                   color: Color.fromARGB(255, 255, 255, 255),
                   size: 30.0,
@@ -251,11 +250,11 @@ class DrawCustomButton extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final path = Path()
-      ..moveTo(175, 0)
-      ..lineTo(500, 0)
-      ..lineTo(500, 55)
-      ..lineTo(250, 55)
-      ..lineTo(175, 0);
+      ..moveTo(size.width, 0)
+      ..lineTo(size.width, 55)
+      ..lineTo(size.width - 150, 55)
+      ..lineTo(size.width - 250, 0)
+      ..lineTo(size.width, 0);
     final paint = Paint()
       ..color = Colors.black
       ..style = PaintingStyle.fill;
