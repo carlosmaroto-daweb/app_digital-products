@@ -194,7 +194,6 @@ class _FolderPageState extends State<FolderPage> {
               child: IconButton(
                 padding: const EdgeInsets.all(0.0),
                 icon: getIcon(),
-                tooltip: 'Abrir perfil',
                 onPressed: () {
                   setState(() {
                     _selectedIndex++;

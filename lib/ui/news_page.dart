@@ -268,7 +268,6 @@ class _NewsPageState extends State<NewsPage> {
               padding:
                   EdgeInsets.only(left: returnResponsiveWidth(context, 0.03)),
               icon: const Icon(Icons.search, color: Colors.white, size: 36.0),
-              tooltip: 'Abrir perfil',
               onPressed: () {
                 // handle the press
               },

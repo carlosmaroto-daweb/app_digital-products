@@ -58,7 +58,6 @@ class _MainPage extends State<MainPage> {
               child: IconButton(
                 padding: const EdgeInsets.all(0.0),
                 icon: const Icon(Icons.account_circle, size: 50.0),
-                tooltip: 'Abrir perfil',
                 onPressed: () {
                   // handle the press
                 },
@@ -94,7 +93,6 @@ class _MainPage extends State<MainPage> {
                             left: returnResponsiveWidth(context, 0.03)),
                         icon: const Icon(Icons.search,
                             color: Colors.white, size: 36.0),
-                        tooltip: 'Abrir perfil',
                         onPressed: () {
                           // handle the press
                         },
