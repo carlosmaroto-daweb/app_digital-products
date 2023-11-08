@@ -86,8 +86,8 @@ class _FolderPageState extends State<FolderPage> {
         Padding(
           padding: EdgeInsets.only(top: returnResponsiveHeight(context, 0.02)),
           child: GridView(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, childAspectRatio: 4 / 5),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3, childAspectRatio: getChildAspectRatio()),
             children: pdfGridView,
           ),
         )
@@ -215,6 +215,15 @@ class _FolderPageState extends State<FolderPage> {
       return const Icon(Icons.list_outlined, size: 30.0);
     } else {
       return const Icon(Icons.grid_view, size: 30.0);
+    }
+  }
+
+  double getChildAspectRatio() {
+    if (returnResponsiveHeight(context, 1) >
+        returnResponsiveWidth(context, 1)) {
+      return 4 / 5;
+    } else {
+      return 2 / 1;
     }
   }
 }
