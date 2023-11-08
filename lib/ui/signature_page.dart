@@ -177,24 +177,22 @@ class _SignaturePageState extends State<SignaturePage> {
                       padding: EdgeInsets.only(
                           top: returnResponsiveHeight(context, 0.03)),
                       child: Center(
-                        child: InkWell(
-                          onTap: () {},
-                          child: DottedBorder(
-                            color: Colors.white,
-                            strokeWidth: 0.5,
-                            dashPattern: const [10, 6],
-                            child: Container(
-                              width: returnResponsiveWidth(context, 0.8),
-                              height: returnResponsiveHeight(context, 0.25),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: getCanvas(),
+                        child: DottedBorder(
+                          color: Colors.white,
+                          strokeWidth: 0.5,
+                          dashPattern: const [10, 6],
+                          child: Container(
+                            width: returnResponsiveWidth(context, 0.8),
+                            height: returnResponsiveHeight(context, 0.25),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
                             ),
+                            child: getCanvas(),
                           ),
                         ),
                       ),
                     ),
+                    getTextReset(),
                     Padding(
                       padding: EdgeInsets.only(
                           top: returnResponsiveHeight(context, 0.05)),
@@ -229,6 +227,24 @@ class _SignaturePageState extends State<SignaturePage> {
       ]),
       bottomNavigationBar: const Nav(4),
     );
+  }
+
+  Widget getTextReset() {
+    if (_selectedPDF) {
+      return InkWell(
+        onTap: () async {
+          _controller.clear();
+        },
+        child: const Center(
+          child: Text(
+            'Restablecer firma',
+            style: TextStyle(color: Colors.red, fontSize: 18),
+          ),
+        ),
+      );
+    } else {
+      return Container();
+    }
   }
 
   Border getBorderActive(index) {
