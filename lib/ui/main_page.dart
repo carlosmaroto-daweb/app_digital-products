@@ -76,7 +76,7 @@ class _MainPage extends State<MainPage> {
               children: [
                 Container(
                   width: returnResponsiveWidth(context, 0.8),
-                  height: returnResponsiveHeight(context, 0.045),
+                  height: 40,
                   decoration: BoxDecoration(
                     color: const Color.fromRGBO(63, 62, 62, 1),
                     borderRadius: BorderRadius.circular(8),
@@ -302,7 +302,7 @@ class _MainPage extends State<MainPage> {
                 EdgeInsets.only(top: returnResponsiveHeight(context, 0.02)),
             child: SizedBox(
               width: returnResponsiveWidth(context, 1),
-              height: returnResponsiveHeight(context, 0.39),
+              height: returnResponsiveHeight(context, 0.33),
               child: ListView.builder(
                   itemCount: recentFiles.length,
                   itemBuilder: ((context, index) {
