@@ -15,6 +15,8 @@ class SignaturePage extends StatefulWidget {
 
 class _SignaturePageState extends State<SignaturePage> {
   List<File> pdfFiles = [];
+  int _indexSelectedPDF = -1;
+  bool _selectedPDF = false;
   final SignatureController _controller = SignatureController(
     penStrokeWidth: 2,
     penColor: Colors.white,
@@ -100,31 +102,51 @@ class _SignaturePageState extends State<SignaturePage> {
                     return Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: InkWell(
-                              onTap: () {},
-                              onLongPress: () {},
-                              child: Column(
-                                children: [
-                                  const Icon(Icons.insert_drive_file_outlined,
-                                      color: Colors.white, size: 100),
-                                  Text(
-                                    '${pdfFiles[index].title}',
-                                    style: const TextStyle(
-                                        color: Colors.white70,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                  const Text(
-                                    '27/10/2023\n10,2 MB',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.white70,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ],
+                          Container(
+                            decoration:
+                                BoxDecoration(border: getBorderActive(index)),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    if (_selectedPDF) {
+                                      if (_indexSelectedPDF == index) {
+                                        _indexSelectedPDF = -1;
+                                        _selectedPDF = false;
+                                      } else {
+                                        _indexSelectedPDF = index;
+                                        _selectedPDF = true;
+                                        _controller.clear();
+                                      }
+                                    } else {
+                                      _indexSelectedPDF = index;
+                                      _selectedPDF = true;
+                                      _controller.clear();
+                                    }
+                                  });
+                                },
+                                child: Column(
+                                  children: [
+                                    const Icon(Icons.insert_drive_file_outlined,
+                                        color: Colors.white, size: 100),
+                                    Text(
+                                      '${pdfFiles[index].title}',
+                                      style: const TextStyle(
+                                          color: Colors.white70,
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                    const Text(
+                                      '27/10/2023\n10,2 MB',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Colors.white70,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -167,7 +189,7 @@ class _SignaturePageState extends State<SignaturePage> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8),
                               ),
-                              child: _signatureCanvas,
+                              child: getCanvas(),
                             ),
                           ),
                         ),
@@ -207,5 +229,21 @@ class _SignaturePageState extends State<SignaturePage> {
       ]),
       bottomNavigationBar: const Nav(4),
     );
+  }
+
+  Border getBorderActive(index) {
+    if (_indexSelectedPDF == index) {
+      return Border.all(color: const Color.fromRGBO(11, 77, 69, 1));
+    } else {
+      return Border.all(color: Colors.transparent);
+    }
+  }
+
+  Widget getCanvas() {
+    if (_selectedPDF) {
+      return _signatureCanvas;
+    } else {
+      return Container();
+    }
   }
 }
