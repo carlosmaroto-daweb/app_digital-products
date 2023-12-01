@@ -106,7 +106,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const Icon(Icons.supervisor_account,
-                                    color: Color.fromRGBO(201, 4, 14, 1),
+                                    color: Color.fromRGBO(0, 0, 0, 1),
                                     size: 75.0),
                                 Padding(
                                   padding: EdgeInsets.only(
@@ -150,7 +150,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const Icon(Icons.assignment,
-                                    color: Color.fromRGBO(201, 4, 14, 1),
+                                    color: Color.fromRGBO(0, 0, 0, 1),
                                     size: 75.0),
                                 Padding(
                                   padding: EdgeInsets.only(
@@ -256,7 +256,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const Icon(Icons.security,
-                                    color: Color.fromRGBO(201, 4, 14, 1),
+                                    color: Color.fromRGBO(0, 0, 0, 1),
                                     size: 75.0),
                                 Padding(
                                   padding: EdgeInsets.only(
@@ -300,7 +300,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const Icon(Icons.support_agent,
-                                    color: Color.fromRGBO(201, 4, 14, 1),
+                                    color: Color.fromRGBO(0, 0, 0, 1),
                                     size: 75.0),
                                 Padding(
                                   padding: EdgeInsets.only(
