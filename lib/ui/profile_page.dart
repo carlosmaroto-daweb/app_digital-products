@@ -237,7 +237,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 fontWeight: FontWeight.w400),
                           ),
                           const Text(
-                            'C/Mendez nuñez 7, Granada',
+                            'C/Melchor almagro 7, Granada',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
