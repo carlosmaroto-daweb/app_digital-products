@@ -248,7 +248,7 @@ class _NotificationPageState extends State<NotificationPage> {
         result = Colors.green;
         break;
       default:
-        result = const Color.fromRGBO(11, 77, 69, 1);
+        result = const Color.fromRGBO(243, 216, 78, 0.9);
     }
     return result;
   }

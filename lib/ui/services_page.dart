@@ -180,8 +180,8 @@ class _ServicesPageState extends State<ServicesPage> {
                                 children: [
                                   ElevatedButton(
                                     style: ElevatedButton.styleFrom(
-                                      backgroundColor:
-                                          const Color.fromRGBO(11, 77, 69, 1),
+                                      backgroundColor: const Color.fromRGBO(
+                                          243, 216, 78, 0.9),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(10),
                                       ),
@@ -303,7 +303,7 @@ class _ServicesPageState extends State<ServicesPage> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 const Icon(Icons.verified_user,
-                                    color: Color.fromRGBO(11, 77, 69, 1),
+                                    color: Color.fromRGBO(243, 216, 78, 0.9),
                                     size: 75.0),
                                 Padding(
                                   padding: EdgeInsets.only(

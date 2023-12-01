@@ -366,7 +366,7 @@ class _NewsPageState extends State<NewsPage> {
 
   Color getBackgroundColor(index) {
     if (_selectedIndex == index) {
-      return const Color.fromRGBO(11, 77, 69, 1);
+      return const Color.fromRGBO(243, 216, 78, 0.9);
     } else {
       return Colors.white;
     }

@@ -186,7 +186,7 @@ class _NewDocumentPageState extends State<NewDocumentPage> {
                   EdgeInsets.only(top: returnResponsiveHeight(context, 0.05)),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromRGBO(11, 77, 69, 1),
+                  backgroundColor: const Color.fromRGBO(243, 216, 78, 0.9),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),

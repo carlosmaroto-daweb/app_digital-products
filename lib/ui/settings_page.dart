@@ -66,7 +66,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       child: Container(
                           width: returnResponsiveWidth(context, 0.45),
                           decoration: const BoxDecoration(
-                              color: Color.fromRGBO(11, 77, 69, 1),
+                              color: Color.fromRGBO(243, 216, 78, 0.9),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20))),
                           child: Padding(
@@ -173,7 +173,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       child: Container(
                           width: returnResponsiveWidth(context, 0.45),
                           decoration: const BoxDecoration(
-                              color: Color.fromRGBO(11, 77, 69, 1),
+                              color: Color.fromRGBO(243, 216, 78, 0.9),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20))),
                           child: Padding(
@@ -213,7 +213,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       child: Container(
                           width: returnResponsiveWidth(context, 0.45),
                           decoration: const BoxDecoration(
-                              color: Color.fromRGBO(11, 77, 69, 1),
+                              color: Color.fromRGBO(243, 216, 78, 0.9),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20))),
                           child: Padding(
@@ -326,7 +326,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       child: Container(
                           width: returnResponsiveWidth(context, 0.45),
                           decoration: const BoxDecoration(
-                              color: Color.fromRGBO(11, 77, 69, 1),
+                              color: Color.fromRGBO(243, 216, 78, 0.9),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20))),
                           child: Padding(
