@@ -63,7 +63,7 @@ class _ProfilePageState extends State<ProfilePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/logos/a14-profile.png',
+                  'assets/logos/academia-profile.png',
                 ),
               ],
             ),
@@ -90,7 +90,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'atencioncliente@a14.es',
+                    'atencioncliente@academia.es',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,

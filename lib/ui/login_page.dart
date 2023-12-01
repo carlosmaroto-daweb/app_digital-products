@@ -50,7 +50,7 @@ class LoginPage extends StatelessWidget {
                 padding:
                     EdgeInsets.only(top: returnResponsiveHeight(context, 0.34)),
                 child: Image.asset(
-                  'assets/logos/a14.png',
+                  'assets/logos/academia.png',
                 ),
               ),
             ]),
