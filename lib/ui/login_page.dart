@@ -96,7 +96,7 @@ class LoginPage extends StatelessWidget {
                                             borderSide:
                                                 BorderSide(color: Colors.black),
                                           ),
-                                          hintText: 'Username'),
+                                          hintText: 'Usuario'),
                                     ),
                                   ),
                                 ],
@@ -119,7 +119,7 @@ class LoginPage extends StatelessWidget {
                                             borderSide:
                                                 BorderSide(color: Colors.black),
                                           ),
-                                          hintText: 'Password'),
+                                          hintText: 'Contraseña'),
                                     ),
                                   ),
                                 ],
