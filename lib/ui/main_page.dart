@@ -44,7 +44,7 @@ class _MainPage extends State<MainPage> {
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
         title: const Text(
-          'Hola Área 14',
+          'Hola Academia Cartabón',
           style: TextStyle(
               color: Colors.white, fontSize: 21, fontWeight: FontWeight.w400),
         ),

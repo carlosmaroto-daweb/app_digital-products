@@ -74,7 +74,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Área 14 Viajes y Sistemas SL',
+                    'Academia Cartabón',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
