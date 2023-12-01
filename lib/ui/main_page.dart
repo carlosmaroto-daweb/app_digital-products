@@ -193,7 +193,7 @@ class _MainPage extends State<MainPage> {
                                 radius: 35,
                                 backgroundColor: Color.fromRGBO(45, 43, 43, 1),
                                 child: Icon(Icons.supervisor_account,
-                                    color: Color.fromRGBO(255, 255, 255, 1),
+                                    color: Color.fromRGBO(153, 136, 49, 0.898),
                                     size: 40.0)),
                             Padding(
                               padding: EdgeInsets.only(
@@ -243,7 +243,7 @@ class _MainPage extends State<MainPage> {
                                 radius: 35,
                                 backgroundColor: Color.fromRGBO(45, 43, 43, 1),
                                 child: Icon(Icons.highlight_alt,
-                                    color: Color.fromRGBO(255, 255, 255, 1),
+                                    color: Color.fromRGBO(153, 136, 49, 0.898),
                                     size: 40.0)),
                             Padding(
                               padding: EdgeInsets.only(
