@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:appclients/ui/profile_page.dart';
+import 'package:appclients/ui/main_page.dart';
 import 'package:appclients/common/nav.dart';
 import 'package:appclients/common/notification.dart';
 
@@ -54,11 +54,11 @@ class _NotificationPageState extends State<NotificationPage> {
           icon: const Icon(Icons.arrow_circle_left, size: 50.0),
           onPressed: () {
             Navigator.of(context)
-                .push(CupertinoPageRoute(builder: (_) => const ProfilePage()));
+                .push(CupertinoPageRoute(builder: (_) => const MainPage()));
           },
         ),
         title: const Text(
-          'Noticias',
+          'Notificaciones',
           style: TextStyle(
               color: Colors.white, fontSize: 21, fontWeight: FontWeight.w400),
         ),
@@ -122,11 +122,11 @@ class _NotificationPageState extends State<NotificationPage> {
                                                   MainAxisAlignment
                                                       .spaceBetween,
                                               children: [
-                                                Column(
+                                                const Column(
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
                                                   children: [
-                                                    const Row(
+                                                    Row(
                                                       children: [
                                                         Icon(Icons.schedule,
                                                             color:
@@ -140,28 +140,6 @@ class _NotificationPageState extends State<NotificationPage> {
                                                               fontSize: 15),
                                                         ),
                                                       ],
-                                                    ),
-                                                    Padding(
-                                                      padding: EdgeInsets.only(
-                                                          top:
-                                                              returnResponsiveHeight(
-                                                                  context,
-                                                                  0.005)),
-                                                      child: const Row(
-                                                        children: [
-                                                          Icon(Icons.visibility,
-                                                              color: Colors
-                                                                  .white60,
-                                                              size: 20),
-                                                          Text(
-                                                            ' 345 visitas',
-                                                            style: TextStyle(
-                                                                color: Colors
-                                                                    .white60,
-                                                                fontSize: 15),
-                                                          ),
-                                                        ],
-                                                      ),
                                                     ),
                                                   ],
                                                 ),
@@ -231,7 +209,7 @@ class _NotificationPageState extends State<NotificationPage> {
           ]),
         ),
       ]),
-      bottomNavigationBar: const Nav(3),
+      bottomNavigationBar: const Nav(1),
     );
   }
 
