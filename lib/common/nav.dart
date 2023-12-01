@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:appclients/ui/documents_page.dart';
-import 'package:appclients/ui/notification_page.dart';
+import 'package:appclients/ui/news_page.dart';
 import 'package:appclients/ui/main_page.dart';
 import 'package:appclients/ui/profile_page.dart';
 import 'package:appclients/ui/settings_page.dart';
@@ -34,7 +34,7 @@ class _NavState extends State<Nav> {
           label: '',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.notifications_active),
+          icon: Icon(Icons.rss_feed),
           label: '',
         ),
         BottomNavigationBarItem(
@@ -59,7 +59,7 @@ class _NavState extends State<Nav> {
         handleNavigateTapToControllerDocumentsPage(context);
         break;
       case 1:
-        handleNavigateTapToControllerNotificationPage(context);
+        handleNavigateTapToControllerNewsPage(context);
         break;
       case 2:
         handleNavigateTapToControllerMainPage(context);
@@ -78,9 +78,9 @@ class _NavState extends State<Nav> {
         .push(CupertinoPageRoute(builder: (_) => const DocumentsPage()));
   }
 
-  void handleNavigateTapToControllerNotificationPage(BuildContext context) {
+  void handleNavigateTapToControllerNewsPage(BuildContext context) {
     Navigator.of(context)
-        .push(CupertinoPageRoute(builder: (_) => const NotificationPage()));
+        .push(CupertinoPageRoute(builder: (_) => const NewsPage()));
   }
 
   void handleNavigateTapToControllerMainPage(BuildContext context) {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:appclients/ui/main_page.dart';
 import 'package:appclients/common/nav.dart';
+import 'package:appclients/ui/notification_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -36,6 +37,24 @@ class _ProfilePageState extends State<ProfilePage> {
                 .push(CupertinoPageRoute(builder: (_) => const MainPage()));
           },
         ),
+        actions: <Widget>[
+          Padding(
+            padding:
+                EdgeInsets.only(right: returnResponsiveWidth(context, 0.05)),
+            child: SizedBox(
+              height: 50.0,
+              width: 50.0,
+              child: IconButton(
+                padding: const EdgeInsets.all(0.0),
+                icon: const Icon(Icons.notifications, size: 30.0),
+                onPressed: () {
+                  Navigator.of(context).push(CupertinoPageRoute(
+                      builder: (_) => const NotificationPage()));
+                },
+              ),
+            ),
+          ),
+        ],
       ),
       body: Stack(children: [
         Column(
@@ -44,7 +63,7 @@ class _ProfilePageState extends State<ProfilePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/logos/academia-profile.png',
+                  'assets/logos/a14-profile.png',
                 ),
               ],
             ),
@@ -55,7 +74,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Academia Cartabón',
+                    'Área 14 Viajes y Sistemas SL',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
@@ -71,7 +90,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'atencioncliente@academia.es',
+                    'atencioncliente@a14.es',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
@@ -218,7 +237,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 fontWeight: FontWeight.w400),
                           ),
                           const Text(
-                            'C/Melchor almagro 7, Granada',
+                            'C/Mendez nuñez 7, Granada',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
@@ -234,7 +253,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   EdgeInsets.only(top: returnResponsiveHeight(context, 0.03)),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromRGBO(243, 216, 78, 0.9),
+                  backgroundColor: const Color.fromRGBO(11, 77, 69, 1),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),

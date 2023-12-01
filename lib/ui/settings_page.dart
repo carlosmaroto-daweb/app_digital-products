@@ -5,6 +5,8 @@ import 'package:appclients/common/nav.dart';
 import 'package:appclients/ui/new_document_page.dart';
 import 'package:appclients/ui/signature_page.dart';
 import 'package:appclients/ui/privacy_page.dart';
+import 'package:appclients/ui/services_page.dart';
+import 'package:appclients/ui/receipt_page.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -64,7 +66,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       child: Container(
                           width: returnResponsiveWidth(context, 0.45),
                           decoration: const BoxDecoration(
-                              color: Color.fromRGBO(243, 216, 78, 0.9),
+                              color: Color.fromRGBO(11, 77, 69, 1),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20))),
                           child: Padding(
@@ -104,7 +106,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const Icon(Icons.supervisor_account,
-                                    color: Color.fromRGBO(153, 136, 49, 0.898),
+                                    color: Color.fromRGBO(201, 4, 14, 1),
                                     size: 75.0),
                                 Padding(
                                   padding: EdgeInsets.only(
@@ -148,7 +150,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const Icon(Icons.assignment,
-                                    color: Color.fromRGBO(153, 136, 49, 0.898),
+                                    color: Color.fromRGBO(201, 4, 14, 1),
                                     size: 75.0),
                                 Padding(
                                   padding: EdgeInsets.only(
@@ -171,7 +173,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       child: Container(
                           width: returnResponsiveWidth(context, 0.45),
                           decoration: const BoxDecoration(
-                              color: Color.fromRGBO(243, 216, 78, 0.9),
+                              color: Color.fromRGBO(11, 77, 69, 1),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20))),
                           child: Padding(
@@ -211,7 +213,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       child: Container(
                           width: returnResponsiveWidth(context, 0.45),
                           decoration: const BoxDecoration(
-                              color: Color.fromRGBO(243, 216, 78, 0.9),
+                              color: Color.fromRGBO(11, 77, 69, 1),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20))),
                           child: Padding(
@@ -254,7 +256,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const Icon(Icons.security,
-                                    color: Color.fromRGBO(153, 136, 49, 0.898),
+                                    color: Color.fromRGBO(201, 4, 14, 1),
                                     size: 75.0),
                                 Padding(
                                   padding: EdgeInsets.only(
@@ -275,6 +277,84 @@ class _SettingsPageState extends State<SettingsPage> {
                   ],
                 ),
               ),
+              Padding(
+                padding:
+                    EdgeInsets.only(top: returnResponsiveHeight(context, 0.03)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(CupertinoPageRoute(
+                            builder: (_) => const ServicesPage()));
+                      },
+                      child: Container(
+                          width: returnResponsiveWidth(context, 0.45),
+                          decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 15, 20, 30),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Icon(Icons.support_agent,
+                                    color: Color.fromRGBO(201, 4, 14, 1),
+                                    size: 75.0),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: returnResponsiveHeight(
+                                          context, 0.015)),
+                                  child: const Text(
+                                    'Mis servicios',
+                                    style: TextStyle(
+                                        fontFamily: 'Raleway',
+                                        color: Colors.black,
+                                        fontSize: 16),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(CupertinoPageRoute(
+                            builder: (_) => const ReceiptPage()));
+                      },
+                      child: Container(
+                          width: returnResponsiveWidth(context, 0.45),
+                          decoration: const BoxDecoration(
+                              color: Color.fromRGBO(11, 77, 69, 1),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 15, 20, 30),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Icon(Icons.receipt_long,
+                                    color: Colors.white, size: 75.0),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: returnResponsiveHeight(
+                                          context, 0.015)),
+                                  child: const Text(
+                                    'Mis facturas',
+                                    style: TextStyle(
+                                        fontFamily: 'Raleway',
+                                        color: Colors.white,
+                                        fontSize: 16),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ])

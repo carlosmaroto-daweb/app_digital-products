@@ -44,7 +44,7 @@ class _MainPage extends State<MainPage> {
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
         title: const Text(
-          'Hola Academia Cartabón',
+          'Hola Área 14',
           style: TextStyle(
               color: Colors.white, fontSize: 21, fontWeight: FontWeight.w400),
         ),
@@ -168,7 +168,7 @@ class _MainPage extends State<MainPage> {
                                 radius: 35,
                                 backgroundColor: Color.fromRGBO(45, 43, 43, 1),
                                 child: Icon(Icons.security,
-                                    color: Color.fromRGBO(243, 216, 78, 0.9),
+                                    color: Color.fromRGBO(11, 77, 69, 1),
                                     size: 40.0)),
                             Padding(
                               padding: EdgeInsets.only(
@@ -193,7 +193,7 @@ class _MainPage extends State<MainPage> {
                                 radius: 35,
                                 backgroundColor: Color.fromRGBO(45, 43, 43, 1),
                                 child: Icon(Icons.supervisor_account,
-                                    color: Color.fromRGBO(153, 136, 49, 0.898),
+                                    color: Color.fromRGBO(201, 4, 14, 1),
                                     size: 40.0)),
                             Padding(
                               padding: EdgeInsets.only(
@@ -218,7 +218,7 @@ class _MainPage extends State<MainPage> {
                                 radius: 35,
                                 backgroundColor: Color.fromRGBO(45, 43, 43, 1),
                                 child: Icon(Icons.business,
-                                    color: Color.fromRGBO(243, 216, 78, 0.9),
+                                    color: Color.fromRGBO(11, 77, 69, 1),
                                     size: 40.0)),
                             Padding(
                               padding: EdgeInsets.only(
@@ -243,7 +243,7 @@ class _MainPage extends State<MainPage> {
                                 radius: 35,
                                 backgroundColor: Color.fromRGBO(45, 43, 43, 1),
                                 child: Icon(Icons.highlight_alt,
-                                    color: Color.fromRGBO(153, 136, 49, 0.898),
+                                    color: Color.fromRGBO(201, 4, 14, 1),
                                     size: 40.0)),
                             Padding(
                               padding: EdgeInsets.only(

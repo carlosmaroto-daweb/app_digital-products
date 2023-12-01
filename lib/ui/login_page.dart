@@ -50,7 +50,7 @@ class LoginPage extends StatelessWidget {
                 padding:
                     EdgeInsets.only(top: returnResponsiveHeight(context, 0.34)),
                 child: Image.asset(
-                  'assets/logos/academia.png',
+                  'assets/logos/a14.png',
                 ),
               ),
             ]),
@@ -96,7 +96,7 @@ class LoginPage extends StatelessWidget {
                                             borderSide:
                                                 BorderSide(color: Colors.black),
                                           ),
-                                          hintText: 'Usuario'),
+                                          hintText: 'Username'),
                                     ),
                                   ),
                                 ],
@@ -119,7 +119,7 @@ class LoginPage extends StatelessWidget {
                                             borderSide:
                                                 BorderSide(color: Colors.black),
                                           ),
-                                          hintText: 'Contraseña'),
+                                          hintText: 'Password'),
                                     ),
                                   ),
                                 ],

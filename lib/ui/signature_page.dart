@@ -200,7 +200,7 @@ class _SignaturePageState extends State<SignaturePage> {
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor:
-                                const Color.fromRGBO(243, 216, 78, 0.9),
+                                const Color.fromRGBO(11, 77, 69, 1),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
@@ -249,7 +249,7 @@ class _SignaturePageState extends State<SignaturePage> {
 
   Border getBorderActive(index) {
     if (_indexSelectedPDF == index) {
-      return Border.all(color: const Color.fromRGBO(243, 216, 78, 0.9));
+      return Border.all(color: const Color.fromRGBO(11, 77, 69, 1));
     } else {
       return Border.all(color: Colors.transparent);
     }
